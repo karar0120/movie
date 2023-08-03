@@ -18,7 +18,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
         ApiConstance.nowPlayingMoviePath);
     if (response.statusCode == 200) {
       return List.from(
-          (response.data['result'] as List).map((e) => MovieModel.fromJson(e)));
+          (response.data['results'] as List).map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerException(errorMessageModel:ErrorMessageModel.fromJson(response.data));
     }
@@ -30,7 +30,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
         ApiConstance.popularMoviePath);
     if (response.statusCode == 200) {
       return List.from(
-          (response.data['result'] as List).map((e) => MovieModel.fromJson(e)));
+          (response.data['results'] as List).map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerException(errorMessageModel:ErrorMessageModel.fromJson(response.data));
     }
@@ -42,7 +42,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
         ApiConstance.topRatedMoviePath);
     if (response.statusCode == 200) {
       return List.from(
-          (response.data['result'] as List).map((e) => MovieModel.fromJson(e)));
+          (response.data['results'] as List).map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerException(errorMessageModel:ErrorMessageModel.fromJson(response.data));
     }
