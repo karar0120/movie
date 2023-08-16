@@ -8,6 +8,7 @@ import 'package:movie_udamy/movie/presentation/controller/movie_bloc.dart';
 import 'package:movie_udamy/movie/presentation/controller/movie_state.dart';
 
 import '../../../core/network/api_constance.dart';
+import '../screen/movie_detail_screen.dart';
 
 class NowPlayingComponents extends StatelessWidget {
   const NowPlayingComponents({super.key});
@@ -41,6 +42,7 @@ class NowPlayingComponents extends StatelessWidget {
                     return GestureDetector(
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>MovieDetailScreen(id: item.id,)));
                         /// TODO : NAVIGATE TO MOVIE DETAILS
                       },
                       child: Stack(

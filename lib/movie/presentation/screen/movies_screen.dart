@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_udamy/core/utils/string_constance.dart';
 import 'package:movie_udamy/movie/presentation/components/now_playing_components.dart';
 import 'package:movie_udamy/movie/presentation/components/popular_components.dart';
 import 'package:movie_udamy/movie/presentation/components/top_rated_components.dart';
@@ -19,7 +20,6 @@ class MoviesScreen extends StatelessWidget {
         ..add(GetPopularMovieEvent())
         ..add(GetTopRatedMovieEvent()),
       child: Scaffold(
-        backgroundColor: Colors.grey.shade900,
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           key: const Key('movieScrollView'),
@@ -33,7 +33,7 @@ class MoviesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Popular",
+                      StringConstance.popular,
                       style: GoogleFonts.poppins(
                           fontSize: 19,
                           fontWeight: FontWeight.w500,
@@ -49,7 +49,7 @@ class MoviesScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              'See More',
+                              StringConstance.seeMore,
                               style: TextStyle(color: Colors.white),
                             ),
                             Icon(Icons.arrow_forward_ios,
@@ -73,7 +73,7 @@ class MoviesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Top Rated",
+                      StringConstance.topRated,
                       style: GoogleFonts.poppins(
                           fontSize: 19,
                           fontWeight: FontWeight.w500,
@@ -89,7 +89,7 @@ class MoviesScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              'See More',
+                              StringConstance.seeMore,
                               style: TextStyle(color: Colors.white),
                             ),
                             Icon(Icons.arrow_forward_ios,

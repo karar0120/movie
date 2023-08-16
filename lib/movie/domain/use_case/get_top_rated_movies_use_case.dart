@@ -5,13 +5,13 @@ import 'package:movie_udamy/movie/domain/repository/base_movie_repository.dart';
 import '../../../core/base_use_case/base_use_case.dart';
 import '../../../core/error/failure.dart';
 
-class GetTopRatedMovieUseCase extends BaseUseCase<List<Movie>> {
+class GetTopRatedMovieUseCase extends BaseUseCase<List<Movie>,NoParameters> {
   final BaseMovieRepository baseMovieRepository;
 
   GetTopRatedMovieUseCase({required this.baseMovieRepository});
 
   @override
-  Future<Either<Failure, List<Movie>>> call() async{
+  Future<Either<Failure, List<Movie>>> call(NoParameters parameter) async{
     return await baseMovieRepository.getTopRatedMovie();
   }
 
